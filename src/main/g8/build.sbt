@@ -9,10 +9,11 @@ lazy val logic = (project in file("logic"))
     name := "logic",
     libraryDependencies ++= Seq(
       "org.bouncycastle" % "bcpkix-jdk15on" % "1.69",
-      "org.lz4"          % "lz4-java"       % "1.8.0"
+      "org.lz4"          % "lz4-java"       % "1.8.0",
+      "org.scalacheck"  %% "scalacheck"     % "1.15.2" % Test,
+      "org.scalatest"   %% "scalatest"      % "3.2.3"  % Test
     )
   )
-
 
 lazy val server = (project in file("server"))
   .dependsOn(logic)
